@@ -5,7 +5,7 @@ By Ethan Hooper
 Once you load the project files onto Intellij, the first thing you will want to do is hover your mouse over the gradle tab on the far right of your screen.
 From there, you will expand the task folder followed by the application folder and then double click the gear icon right next to the word run.
 
-![image](https://github.com/hooperethan123/QuaternaryCalculator/assets/112024787/b765f919-a885-4a4c-8ba1-ccaaca4c3522)
+![CalculatorExample](https://github.com/hooperethan123/QuaternaryCalculator/assets/112024787/06cd6816-bb20-47e3-bd04-6fb5c31a3053)
 
 If you see something like this pop up on your screen then you have successfully launched the calculator.
 
