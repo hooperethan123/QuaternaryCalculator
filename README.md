@@ -13,7 +13,7 @@ You will then pick the first number that you would like in the equation by press
 After finishing your number, click an operator (+, -, *, /) and it will clear your screen. This means that you have stored your first number and your operator.
 Put in the second number you want to use and then press equals, you should see the equation's result show up on the screen.
 
-It is important to note that the calculator only stores the last two numbers and the last operator that you selected. For example, 11 * 3 + 2 will result in the equation 3 + 2 so the result will be 11.
+It is important to note that the calculator only stores the last two numbers and the last operator that you selected. For example, 11 * 3 + 2 will result in the equation 3 + 2 so the total will be 5.
 
 ## Meetings
 
