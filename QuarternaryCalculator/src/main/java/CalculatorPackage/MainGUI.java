@@ -15,7 +15,11 @@ import javafx.stage.Stage;
 
 public class MainGUI extends Application {
 
-    private final TextField Result = createTextField("");
+    long NumberOne = 0;
+    long NumberTwo = 0;
+    String Operator = "";
+
+    private final TextField Result = createTextField();
     private final Button ZeroButton = createButton("0");
     private final Button OneButton = createButton("1");
     private final Button TwoButton = createButton("2");
@@ -55,9 +59,9 @@ public class MainGUI extends Application {
         createRoot();
 
         Scene scene = new Scene(root);
-        stage.setTitle("Calculator");
+        stage.setTitle(" Quaternary Calculator");
         stage.setScene(scene);
-        stage.setWidth(250);
+        stage.setWidth(320);
         stage.setHeight(380);
         stage.show();
     }
@@ -78,21 +82,38 @@ public class MainGUI extends Application {
     private void configureThreeButton() {
         ThreeButton.setOnAction(event -> Result.setText(Result.getText() + "3"));
     }
-
     private void configureAddButton() {
-        AddButton.setOnAction(event -> Result.setText(Result.getText() + "+"));
+        AddButton.setOnAction(event -> {
+            NumberOne = Long.parseLong(Result.getText());
+            Operator = "+";
+            Result.setText("");
+
+
+        });
     }
 
     private void configureSubtractButton() {
-        SubtractButton.setOnAction(event -> Result.setText(Result.getText() + "-"));
+        SubtractButton.setOnAction(event -> {
+            NumberOne = Long.parseLong(Result.getText());
+            Operator = "-";
+            Result.setText("");
+        });
     }
 
     private void configureMultiplyButton() {
-        MultiplyButton.setOnAction(event -> Result.setText(Result.getText() + "*"));
+        MultiplyButton.setOnAction(event -> {
+            NumberOne = Long.parseLong(Result.getText());
+            Operator = "*";
+            Result.setText("");
+        });
     }
 
     private void configureDivideButton() {
-        DivideButton.setOnAction(event -> Result.setText(Result.getText() + "/"));
+        DivideButton.setOnAction(event -> {
+            NumberOne = Long.parseLong(Result.getText());
+            Operator = "/";
+            Result.setText("");
+        });
     }
 
     private void configureClearButton() {
@@ -100,7 +121,11 @@ public class MainGUI extends Application {
     }
 
     private void configureEqualButton() {
+        EqualButton.setOnAction(event -> {
+            NumberTwo = Long.parseLong(Result.getText());
+            Result.setText(Long.toString(CalculatorConverter.CalculatorConverter(NumberOne, NumberTwo, Operator)));
 
+        });
     }
 
 
@@ -148,11 +173,12 @@ public class MainGUI extends Application {
         return button;
     }
 
-    private TextField createTextField(String text){
-        TextField textField = new TextField(text);
+    private TextField createTextField(){
+        TextField textField = new TextField("");
         textField.setFont(Font.font(20));
         textField.setAlignment(Pos.CENTER_RIGHT);
         textField.setEditable(false);
         return textField;
     }
+
 }
