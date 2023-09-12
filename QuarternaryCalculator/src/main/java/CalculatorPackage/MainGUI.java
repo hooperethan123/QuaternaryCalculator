@@ -25,6 +25,7 @@ public class MainGUI extends Application {
     private final Button MultiplyButton = createButton("*");
     private final Button DivideButton = createButton("/");
     private final Button EqualButton = createButton("=");
+    private final Button ClearButton = createButton("C");
     BorderPane root;
 
 
@@ -39,6 +40,7 @@ public class MainGUI extends Application {
         configureSubtractButton();
         configureMultiplyButton();
         configureDivideButton();
+        configureClearButton();
         configureEqualButton();
 
 
@@ -56,41 +58,45 @@ public class MainGUI extends Application {
         stage.setTitle("Calculator");
         stage.setScene(scene);
         stage.setWidth(250);
-        stage.setHeight(330);
+        stage.setHeight(380);
         stage.show();
     }
 
     private void configureZeroButton() {
-
+    ZeroButton.setOnAction(event -> Result.setText(Result.getText() + "0"));
 
     }
 
     private void configureOneButton() {
-
+        OneButton.setOnAction(event -> Result.setText(Result.getText() + "1"));
     }
 
     private void configureTwoButton() {
-
+        TwoButton.setOnAction(event -> Result.setText(Result.getText() + "2"));
     }
 
     private void configureThreeButton() {
-
+        ThreeButton.setOnAction(event -> Result.setText(Result.getText() + "3"));
     }
 
     private void configureAddButton() {
-
+        AddButton.setOnAction(event -> Result.setText(Result.getText() + "+"));
     }
 
     private void configureSubtractButton() {
-
+        SubtractButton.setOnAction(event -> Result.setText(Result.getText() + "-"));
     }
 
     private void configureMultiplyButton() {
-
+        MultiplyButton.setOnAction(event -> Result.setText(Result.getText() + "*"));
     }
 
     private void configureDivideButton() {
+        DivideButton.setOnAction(event -> Result.setText(Result.getText() + "/"));
+    }
 
+    private void configureClearButton() {
+        ClearButton.setOnAction(event -> Result.setText(""));
     }
 
     private void configureEqualButton() {
@@ -103,8 +109,6 @@ public class MainGUI extends Application {
         VBox top = new VBox();
         top.getChildren().setAll(Result);
         top.setSpacing(25);
-
-
 
         HBox RowOne = new HBox();
         RowOne.getChildren().setAll(ZeroButton, OneButton, AddButton);
@@ -125,6 +129,12 @@ public class MainGUI extends Application {
         RowThree.setSpacing(20);
         RowThree.setAlignment(Pos.CENTER);
         top.getChildren().add(RowThree);
+
+        HBox RowFour = new HBox();
+        RowFour.getChildren().setAll(ClearButton);
+        RowFour.setSpacing(20);
+        RowFour.setAlignment(Pos.CENTER);
+        top.getChildren().add(RowFour);
 
         root.setTop(top);
 
