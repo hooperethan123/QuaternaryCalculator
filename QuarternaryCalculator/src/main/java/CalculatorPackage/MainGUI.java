@@ -11,12 +11,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-
-
 public class MainGUI extends Application {
 
-    long NumberOne = 0;
-    long NumberTwo = 0;
+    int NumberOne = 0;
+    int NumberTwo = 0;
     String Operator = "";
 
     private final TextField Result = createTextField();
@@ -46,8 +44,6 @@ public class MainGUI extends Application {
         configureDivideButton();
         configureClearButton();
         configureEqualButton();
-
-
     }
 
     private void createRoot(){
@@ -81,19 +77,18 @@ public class MainGUI extends Application {
     private void configureThreeButton() {
         ThreeButton.setOnAction(event -> Result.setText(Result.getText() + "3"));
     }
+
     private void configureAddButton() {
         AddButton.setOnAction(event -> {
-            NumberOne = Long.parseLong(Result.getText());
+            NumberOne = Integer.parseInt(Result.getText(), 4);
             Operator = "+";
             Result.setText("");
-
-
         });
     }
 
     private void configureSubtractButton() {
         SubtractButton.setOnAction(event -> {
-            NumberOne = Long.parseLong(Result.getText());
+            NumberOne = Integer.parseInt(Result.getText(), 4);
             Operator = "-";
             Result.setText("");
         });
@@ -101,7 +96,7 @@ public class MainGUI extends Application {
 
     private void configureMultiplyButton() {
         MultiplyButton.setOnAction(event -> {
-            NumberOne = Long.parseLong(Result.getText());
+            NumberOne = Integer.parseInt(Result.getText(), 4);
             Operator = "*";
             Result.setText("");
         });
@@ -109,7 +104,7 @@ public class MainGUI extends Application {
 
     private void configureDivideButton() {
         DivideButton.setOnAction(event -> {
-            NumberOne = Long.parseLong(Result.getText());
+            NumberOne = Integer.parseInt(Result.getText(), 4);
             Operator = "/";
             Result.setText("");
         });
@@ -121,13 +116,11 @@ public class MainGUI extends Application {
 
     private void configureEqualButton() {
         EqualButton.setOnAction(event -> {
-            NumberTwo = Long.parseLong(Result.getText());
-            Result.setText(Long.toString(CalculatorConverter.CalculatorConverter(NumberOne, NumberTwo, Operator)));
+            NumberTwo = Integer.parseInt(Result.getText(), 4);
+            Result.setText((CalculatorConverter.CalculatorConverter(NumberOne, NumberTwo, Operator)));
 
         });
     }
-
-
 
     private void setRoot() {
         VBox top = new VBox();
@@ -162,13 +155,12 @@ public class MainGUI extends Application {
 
         root.setTop(top);
 
-
     }
 
     private Button createButton(String text) {
         Button button = new Button(text);
         button.setFont(Font.font(20));
-        button.setPrefSize(40,40);
+        button.setPrefSize(50,40);
         return button;
     }
 

@@ -2,19 +2,20 @@ package CalculatorPackage;
 
 public class CalculatorConverter {
 
-    public static long CalculatorConverter(long numberOne, long numberTwo, String operator) {
+    public static String CalculatorConverter(Integer numberOne, Integer numberTwo, String operator) {
 
+        int DecimalResult = 0;
 
-        return switch (operator) {
-            case "+" -> numberOne + numberTwo;
-            case "-" -> numberOne - numberTwo;
-            case "*" -> numberOne * numberTwo;
-            case "/" -> numberOne / numberTwo;
-            default -> 0;
-        };
+        switch (operator) {
+            case "+" -> DecimalResult = numberOne + numberTwo;
+            case "-" -> DecimalResult = numberOne - numberTwo;
+            case "*" -> DecimalResult = numberOne * numberTwo;
+            case "/" -> DecimalResult = numberOne / numberTwo;
+            default -> {
+            }
+        }
 
-
-
+        return Integer.toString(DecimalResult, 4);
 
     }
 }
