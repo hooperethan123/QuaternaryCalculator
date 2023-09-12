@@ -19,8 +19,8 @@ It is important to note that the calculator only stores the last two numbers and
 
 As this was a solo project, I completed all the work by myself. 
 
-Sunday was spent setting up IntelliJ and making sure Gradle was correctly configured.  
-Monday is when most of the actual code was created.
+Sunday 9/11 was spent setting up IntelliJ and making sure Gradle was correctly configured.  
+Monday 9/12 is when most of the actual code was created.
 
 
 
