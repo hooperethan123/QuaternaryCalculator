@@ -1,7 +1,7 @@
 # QuaternaryCalculator
 By Ethan Hooper
 
-##How To Run
+## How To Run
 Once you load the project files onto Intellij, the first thing you will want to do is hover your mouse over the gradle tab on the far right of your screen.
 From there, you will expand the task folder followed by the application folder and then double click the gear icon right next to the word run.
 
@@ -15,7 +15,7 @@ Put in the second number you want to use and then press equals, you should see t
 
 It is important to note that the calculator only stores the last two numbers and the last operator that you selected. For example, 11 * 3 + 2 will result in the equation 3 + 2 so the result will be 11.
 
-##Meetings
+## Meetings
 
 As this was a solo project, I completed all the work by myself. 
 
