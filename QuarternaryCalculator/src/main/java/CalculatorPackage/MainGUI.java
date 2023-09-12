@@ -67,8 +67,7 @@ public class MainGUI extends Application {
     }
 
     private void configureZeroButton() {
-    ZeroButton.setOnAction(event -> Result.setText(Result.getText() + "0"));
-
+        ZeroButton.setOnAction(event -> Result.setText(Result.getText() + "0"));
     }
 
     private void configureOneButton() {
